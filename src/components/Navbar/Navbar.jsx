@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { Tooltip } from "react-tooltip";
 export function Navbar() {
   const { user, loading, logOut } = useContext(AuthContext);
 
@@ -36,13 +37,13 @@ export function Navbar() {
         ""
       )}
       <li>
-        <NavLink to="/all-tourists-spot">All Tourists Spot</NavLink>
+        <NavLink to="/all-art-craft">All Art & craft Items</NavLink>
       </li>
       <li>
-        <NavLink to="/add-tourists-spot">Add Tourists Spot</NavLink>
+        <NavLink to="/add-craft-item">Add Craft Item</NavLink>
       </li>
       <li>
-        <NavLink to="/my-list">My List</NavLink>
+        <NavLink to="/my-art-craft-list">My Art & Craft List</NavLink>
       </li>
     </>
   );
@@ -73,7 +74,7 @@ export function Navbar() {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">TourLand</a>
+        <a className="btn btn-ghost text-2xl font-bold">Art & craft</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -108,7 +109,7 @@ export function Navbar() {
               </li>
             )}
           </ul>
-          <div className="dropdown dropdown-end" title={userDisplayName}>
+          <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
@@ -118,7 +119,16 @@ export function Navbar() {
                 {loading ? (
                   <span className="loading loading-spinner loading-md"></span>
                 ) : (
-                  <img alt="profile img" src={userProfile} />
+                  <div>
+                    <a id="my-anchor-element-id">
+                      <img alt="profile img" src={userProfile} />
+                      <Tooltip
+                        // Don't forget the `#`!
+                        anchorSelect="#my-anchor-element-id"
+                        content={userDisplayName}
+                      />
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
