@@ -3,6 +3,8 @@ import { ErrorPage } from "./src/Pages/404/ErrorPage";
 import { Navbar } from "./src/components/Navbar/Navbar";
 import { Footer } from "./src/components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
+import { Login } from "./src/Pages/Login/Login";
+import { Register } from "./src/Pages/Register/Register";
 
 export const router = createBrowserRouter([
   {
@@ -10,6 +12,8 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/", element: <h2>Home</h2> },
+      { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
       {
         path: "/unknown",
         children: [
