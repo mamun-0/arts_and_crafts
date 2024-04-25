@@ -5,23 +5,51 @@ import { Footer } from "./src/components/Footer/Footer";
 import { ToastContainer } from "react-toastify";
 import { Login } from "./src/Pages/Login/Login";
 import { Register } from "./src/Pages/Register/Register";
+import { ProtectedRoute } from "./ProtectedRoute/ProtectedRoute";
+import { Home } from "./src/Pages/Home/Home";
+import { AlreadyLogin } from "./ProtectedRoute/AlreadyLogin";
 
 export const router = createBrowserRouter([
   {
     element: <NavLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <h2>Home</h2> },
-      { path: "/login", element: <Login /> },
-      { path: "/register", element: <Register /> },
+      { path: "/", element: <Home /> },
       {
-        path: "/unknown",
-        children: [
-          { index: true, element: <h2>Unknown element</h2> },
-          { path: "update/:id", element: <h2>Unknown Update</h2> },
-          { path: "edit/:id", element: <h2>Unknown Edit</h2> },
-          { path: "delete/:id", element: <h2>Unknown Delete</h2> },
-        ],
+        path: "/login",
+        element: (
+          <AlreadyLogin>
+            <Login />
+          </AlreadyLogin>
+        ),
+      },
+      {
+        path: "/register",
+        element: (
+          <AlreadyLogin>
+            <Register />
+          </AlreadyLogin>
+        ),
+      },
+      {
+        path: "/add-craft-item",
+        element: (
+          <ProtectedRoute>
+            <h2>Add Craft Item</h2>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/my-art-craft-list",
+        element: (
+          <ProtectedRoute>
+            <h2>My Art & Craft List</h2>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/all-art-craft",
+        element: <h2>All Art & craft Items</h2>,
       },
     ],
   },
