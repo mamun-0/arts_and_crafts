@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useContext } from "react";
 import { Link } from "react-router-dom";

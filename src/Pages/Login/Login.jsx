@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Helmet } from "react-helmet";
 import { useToggle } from "../../../hooks/useToggle";
