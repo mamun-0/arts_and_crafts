@@ -18,7 +18,6 @@ export function Login() {
     setUser,
     loginWithGoogle,
     loginWithGithub,
-    loginWithFacebook,
   } = useContext(AuthContext);
   const {
     register,
@@ -177,15 +176,6 @@ export function Login() {
             >
               <FaGithub />
               Github
-            </button>
-            <button
-              onClick={() => {
-                socialLogin(loginWithFacebook);
-              }}
-              className="btn btn-primary"
-            >
-              <FaFacebook />
-              Facebook
             </button>
           </div>
         </div>
