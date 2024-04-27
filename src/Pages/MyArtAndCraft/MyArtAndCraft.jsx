@@ -46,7 +46,7 @@ export function MyArtAndCraft() {
           Empty List
         </h2>
       ) : (
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 my-5 mx-2">
           <MyArtAndCraftCard myArtsAndCarts={myArts} setToggle={setToggle} />
         </div>
       )}
