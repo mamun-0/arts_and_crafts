@@ -12,6 +12,7 @@ import { AddCraft } from "./src/Pages/AddCraft/AddCraft";
 import AllArtsCrafts from "./src/Pages/AllArtsCrafts/AllArtsCrafts";
 import { MyArtAndCraft } from "./src/Pages/MyArtAndCraft/MyArtAndCraft";
 import { UpdateForm } from "./src/components/UpdateForm/UpdateForm";
+import { Details } from "./src/Pages/Details/Details";
 
 export const router = createBrowserRouter([
   {
@@ -66,7 +67,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/all-art-craft",
-        element: <AllArtsCrafts />,
+        children: [
+          { index: true, element: <AllArtsCrafts /> },
+          {
+            path: ":id",
+            element: (
+              <ProtectedRoute>
+                <Details />
+              </ProtectedRoute>
+            ),
+          },
+        ],
       },
     ],
   },
