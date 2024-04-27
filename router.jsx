@@ -8,6 +8,10 @@ import { Register } from "./src/Pages/Register/Register";
 import { ProtectedRoute } from "./ProtectedRoute/ProtectedRoute";
 import { Home } from "./src/Pages/Home/Home";
 import { AlreadyLogin } from "./ProtectedRoute/AlreadyLogin";
+import { AddCraft } from "./src/Pages/AddCraft/AddCraft";
+import AllArtsCrafts from "./src/Pages/AllArtsCrafts/AllArtsCrafts";
+import { MyArtAndCraft } from "./src/Pages/MyArtAndCraft/MyArtAndCraft";
+import { UpdateForm } from "./src/components/UpdateForm/UpdateForm";
 
 export const router = createBrowserRouter([
   {
@@ -35,21 +39,34 @@ export const router = createBrowserRouter([
         path: "/add-craft-item",
         element: (
           <ProtectedRoute>
-            <h2>Add Craft Item</h2>
+            <AddCraft />
           </ProtectedRoute>
         ),
       },
       {
         path: "/my-art-craft-list",
-        element: (
-          <ProtectedRoute>
-            <h2>My Art & Craft List</h2>
-          </ProtectedRoute>
-        ),
+        children: [
+          {
+            index: true,
+            element: (
+              <ProtectedRoute>
+                <MyArtAndCraft />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: ":id",
+            element: (
+              <ProtectedRoute>
+                <UpdateForm />
+              </ProtectedRoute>
+            ),
+          },
+        ],
       },
       {
         path: "/all-art-craft",
-        element: <h2>All Art & craft Items</h2>,
+        element: <AllArtsCrafts />,
       },
     ],
   },
