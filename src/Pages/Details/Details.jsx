@@ -4,6 +4,7 @@ import { ViewDetails } from "../../components/ViewDetails/ViewDetails";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { Loading } from "../../components/Loading/Loading";
+import { Helmet } from "react-helmet";
 
 export function Details() {
   const [loading, setLodaing] = useState(true);
@@ -22,6 +23,9 @@ export function Details() {
   }, []);
   return (
     <>
+    <Helmet>
+        <title>Details</title>
+      </Helmet>
       {loading ? (
         <Loading />
       ) : (

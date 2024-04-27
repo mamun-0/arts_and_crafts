@@ -5,6 +5,7 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import axios from "axios";
 import { Loading } from "../../components/Loading/Loading";
 import { useToggle } from "../../../hooks/useToggle";
+import { Helmet } from "react-helmet";
 
 export function MyArtAndCraft() {
   const { user } = useContext(AuthContext);
@@ -38,6 +39,9 @@ export function MyArtAndCraft() {
   }, [toggle]);
   return (
     <>
+      <Helmet>
+        <title>My Arts & Crafts</title>
+      </Helmet>
       <SectionTitle title="Personal Arts & Crafts" />
       {loading ? (
         <Loading />
