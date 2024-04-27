@@ -4,12 +4,15 @@ export function Footer() {
   return (
     <div className="bg-black my-auto">
       <div className="p-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center md:gap-4 sm:gap-3 gap-2">
-        <div>
+        <div className="space-y-2">
           <img
             className="md:h-52 md:w-52 sm:h-40 sm:w-40 object-cover rounded-full h-24 w-24"
-            src="https://i.ibb.co/n7mBJDF/insurance.jpg"
+            src="https://cdn0.iconfinder.com/data/icons/tools-165/24/paint-roller-1024.png"
             alt=""
           />
+          <p className="text-slate-500">&copy;2024 All right reserved.</p>
+          <p className="text-slate-500">Art And Craft</p>
+          <p className="text-slate-500">Level-4, 34, Awal Centre, Banani, Dhaka</p>
         </div>
         <div className="text-white space-y-2">
           <p className="font-medium text-lg">Social Links </p>
@@ -41,13 +44,10 @@ export function Footer() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/update-profile">Update Profile</Link>
+              <Link to="/all-art-craft">All Arts Crafts</Link>
             </li>
             <li>
-              <Link to="/about">About Us</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </div>
