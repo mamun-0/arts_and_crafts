@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { Tooltip } from "react-tooltip";
+import { Typewriter } from "react-simple-typewriter";
 export function Navbar() {
   const { user, loading, logOut } = useContext(AuthContext);
 
@@ -74,7 +75,20 @@ export function Navbar() {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl font-bold">Art & craft</a>
+        <a className="btn btn-ghost text-2xl font-bold">
+          Art{" "}
+          <span>
+            <Typewriter
+              words={["&", "Craft"]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
