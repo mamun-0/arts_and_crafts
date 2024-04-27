@@ -27,7 +27,7 @@ export function MyArtAndCraftCard({ myArtsAndCarts, setToggle }) {
                 </li>
                 <li className="border-b py-1">Stock Status: {stockStatus}</li>
               </ul>
-              <div className="text-right">
+              <div className="text-right flex space-x-2">
                 <Link
                   className="btn btn-info btn-sm"
                   to={`/my-art-craft-list/${item._id}`}
