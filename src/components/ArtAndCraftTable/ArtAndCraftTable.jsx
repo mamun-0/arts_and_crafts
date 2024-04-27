@@ -31,7 +31,12 @@ export function ArtAndCraftTable(props) {
                     <td>{subcategory_name}</td>
                     <td>{price}</td>
                     <td>
-                      <Link className="btn btn-sm">View Details</Link>
+                      <Link
+                        to={`/all-art-craft/${item._id}`}
+                        className="btn btn-sm"
+                      >
+                        View Details
+                      </Link>
                     </td>
                   </tr>
                 );
