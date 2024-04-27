@@ -1,3 +1,7 @@
 export function Loading() {
-  return <div className="skeleton w-full h-10"></div>;
+  return (
+    <div>
+      <span className="loading loading-bars loading-lg"></span>
+    </div>
+  );
 }
