@@ -17,17 +17,19 @@ export function DeleteModal({ id, setToggle }) {
     <div>
       <button
         className="btn btn-error btn-sm"
-        onClick={() => document.getElementById("my_modal_1").showModal()}
+        onClick={() => document.getElementById(`my_modal_${id}`).showModal()}
       >
         Delete
       </button>
-      <dialog id="my_modal_1" className="modal">
+      <dialog id={`my_modal_${id}`} className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">
             Are You sure to delete this item🤔🤔!
           </h3>
           <p className="py-4">
-            Press ESC key or click the <span className="font-black text-green-600">No</span> button to cancel deletion
+            Press ESC key or click the{" "}
+            <span className="font-black text-green-600">No</span> button to
+            cancel deletion
           </p>
           <div className="modal-action">
             <form method="dialog">
