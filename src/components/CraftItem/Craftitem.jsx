@@ -22,10 +22,9 @@ export function Craftitem() {
   });
 
   function onSubmit(data) {
-    console.log("Submition", data);
     axios
       .post(
-        "http://localhost:3000/create",
+        `${import.meta.env.VITE_BASE_URL}/create`,
         { ...data },
         {
           headers: {
@@ -75,22 +74,22 @@ export function Craftitem() {
               className="input input-bordered w-full max-w-xs"
             />
           </FormGroup>
-          <FormGroup errorMessage={errors?.subcategory_name?.message}>
+          <FormGroup errorMessage={errors?.subcategory_Name?.message}>
             <label id="subcategory_name">Subcategory Name :</label>
             <input
               htmlFor="subcategory_name"
               type="text"
               placeholder="Subcategory Name"
-              {...register("subcategory_name", {
+              {...register("subcategory_Name", {
                 required: { value: true, message: "Required" },
               })}
               className="input input-bordered w-full max-w-xs"
             />
           </FormGroup>
-          <FormGroup errorMessage={errors?.description?.message}>
+          <FormGroup errorMessage={errors?.short_description?.message}>
             <label id="description">Description:</label>
             <textarea
-              {...register("description", {
+              {...register("short_description", {
                 required: { value: true, message: "Required" },
               })}
               id="description"
@@ -148,9 +147,9 @@ export function Craftitem() {
                 })}
                 className="select select-bordered w-full max-w-xs"
               >
-                {[1.5, 2.3, 3.1].map((option) => (
+                {[1.5, 2, 3, 4.4,5].map((option) => (
                   <option key={option} value={option}>
-                    {`${option + "h"}`}
+                    {`${option + " weeks"}`}
                   </option>
                 ))}
               </select>
