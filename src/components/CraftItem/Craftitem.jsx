@@ -66,7 +66,7 @@ export function Craftitem() {
               {...register("image", {
                 required: { value: true, message: "Required" },
                 pattern: {
-                  value: /^https?:\/\/\S+\.(?:png|jpg|jpeg|gif|bmp|svg)/,
+                  value: /https?:\/\/\S+?\.(?:jpg|jpeg|gif|png|bmp)\b/,
                   message:
                     "Absolute link starts with http or https and ends with .png, .jpg, jpeg, .gif, .bmp",
                 },
@@ -147,7 +147,7 @@ export function Craftitem() {
                 })}
                 className="select select-bordered w-full max-w-xs"
               >
-                {[1.5, 2, 3, 4.4,5].map((option) => (
+                {[1.5, 2, 3, 4.4, 5].map((option) => (
                   <option key={option} value={option}>
                     {`${option + " weeks"}`}
                   </option>

@@ -28,7 +28,7 @@ export function UpdateForm(props) {
   });
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BASE_URL}/${pathname}`)
+      .get(`${import.meta.env.VITE_BASE_URL}${pathname}`)
       .then((res) => {
         setData(res.data);
       })
@@ -87,7 +87,7 @@ export function UpdateForm(props) {
                   {...register("image", {
                     required: { value: true, message: "Required" },
                     pattern: {
-                      value: /^https?:\/\/\S+\.(?:png|jpg|jpeg|gif|bmp|svg)/,
+                      value: /https?:\/\/\S+?\.(?:jpg|jpeg|gif|png|bmp)\b/,
                       message:
                         "Absolute link starts with http or https and ends with .png, .jpg, jpeg, .gif, .bmp",
                     },
