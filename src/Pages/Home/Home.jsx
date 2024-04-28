@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { Loading } from "../../components/Loading/Loading";
+import CraftCategory from "../../components/CraftCategory/CraftCategory";
 
 export function Home() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ export function Home() {
       {loading ? <Loading /> : <Craft_items data={data} />}
       <Extra_1 />
       <Extra_2 />
+      <CraftCategory />
     </div>
   );
 }
