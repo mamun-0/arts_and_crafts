@@ -6,7 +6,7 @@ export function Footer() {
       <div className="p-4 grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 place-items-center md:gap-4 sm:gap-3 gap-2">
         <div className="space-y-2">
           <img
-            className="md:h-52 md:w-52 sm:h-40 sm:w-40 object-cover rounded-full h-24 w-24"
+            className="md:h-40 md:w-40 sm:h-40 sm:w-40 object-cover rounded-full h-24 w-24"
             src="https://cdn0.iconfinder.com/data/icons/tools-165/24/paint-roller-1024.png"
             alt=""
           />
