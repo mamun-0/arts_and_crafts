@@ -40,7 +40,7 @@ export function MyArtAndCraft() {
   useEffect(() => {
     axios
       .post(
-        "http://localhost:3000/filter/my-art-craft-list",
+        `${import.meta.env.VITE_BASE_URL}/filter/my-art-craft-list`,
         { search: selectedOption, user_email: userEmail },
         {
           headers: {
