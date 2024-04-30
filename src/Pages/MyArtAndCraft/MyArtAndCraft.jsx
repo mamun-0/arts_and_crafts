@@ -12,7 +12,7 @@ export function MyArtAndCraft() {
   const userEmail = user?.providerData[0].email;
   const [myArts, setMyArts] = useState([]);
   const [toggle, setToggle] = useToggle();
-  //   const [error, setError] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
@@ -37,12 +37,49 @@ export function MyArtAndCraft() {
         setLoading(false);
       });
   }, [toggle]);
+  useEffect(() => {
+    axios
+      .post(
+        "http://localhost:3000/filter/my-art-craft-list",
+        { search: selectedOption, user_email: userEmail },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        setMyArts(res.data);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [selectedOption]);
+  const handleChange = (event) => {
+    setLoading(true);
+    setSelectedOption(event.target.value);
+  };
   return (
     <>
       <Helmet>
         <title>My Arts & Crafts</title>
       </Helmet>
       <SectionTitle title="Personal Arts & Crafts" />
+      <div className="text-center">
+        <label htmlFor="yesno" className="text-xl font-bold">
+          Filter :{" "}
+        </label>
+        <select
+          id="yesno"
+          value={selectedOption}
+          onChange={handleChange}
+          className="text-lg"
+        >
+          <option value="">Select an option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
       {loading ? (
         <Loading />
       ) : myArts?.length == 0 ? (
