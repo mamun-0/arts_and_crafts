@@ -76,10 +76,10 @@ export function Navbar() {
           </ul>
         </div>
         <a className="btn btn-ghost text-2xl font-bold">
-          Art{" "}
+        Painting{" "}
           <span>
             <Typewriter
-              words={["&", "Craft"]}
+              words={["&", "Drawing"]}
               loop={0}
               cursor
               cursorStyle="_"

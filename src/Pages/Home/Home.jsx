@@ -25,7 +25,7 @@ export function Home() {
   return (
     <div>
       <Helmet>
-        <title>Art & Craft</title>
+        <title>Painting & Drawing</title>
       </Helmet>
       <Hero />
       {loading ? <Loading /> : <Craft_items data={data} />}
