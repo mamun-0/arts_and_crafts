@@ -42,7 +42,7 @@ export function Craftitem() {
   }
 
   return (
-    <div className="flex justify-center items-center my-4">
+    <div className="flex justify-center items-center my-4 dark:bg-black dark:text-white">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="md:grid md:gap-4 md:grid-cols-2 flex flex-col space-y-2 md:space-y-0">
           <FormGroup errorMessage={errors?.item_name?.message}>

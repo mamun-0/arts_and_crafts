@@ -5,11 +5,11 @@ function CraftCategory({ data }) {
   return (
     <div>
       <SectionTitle title="Art & Craft Categories" />
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 my-5 mx-2">
+      <div className="p-3 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 mt-5 mx-2">
         {data.map((item, idx) => {
           return (
             <div key={idx}>
-              <div className="border bg-white border-gray-200 rounded-lg p-2 shadow-xl hover:scale-[1.01] transition-transform duration-600">
+              <div className="dark:bg-black border bg-white border-gray-200 rounded-lg p-2 shadow-xl hover:scale-[1.01] transition-transform duration-600">
                 <img
                   className="h-52 w-full object-cover rounded-lg"
                   src={item.image}

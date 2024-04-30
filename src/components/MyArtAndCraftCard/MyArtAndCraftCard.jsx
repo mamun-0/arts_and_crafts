@@ -10,7 +10,7 @@ export function MyArtAndCraftCard({ myArtsAndCarts, setToggle }) {
           item;
         return (
           <div key={idx}>
-            <div className="border bg-white border-gray-200 rounded-lg p-2 shadow-xl hover:scale-[1.01] transition-transform duration-600">
+            <div className="dark:bg-black dark:text-white border bg-white border-gray-200 rounded-lg p-2 shadow-xl hover:scale-[1.01] transition-transform duration-600">
               <img
                 className="h-52 w-full object-cover rounded-lg"
                 src={image}

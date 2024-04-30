@@ -13,6 +13,8 @@ import AllArtsCrafts from "./src/Pages/AllArtsCrafts/AllArtsCrafts";
 import { MyArtAndCraft } from "./src/Pages/MyArtAndCraft/MyArtAndCraft";
 import { UpdateForm } from "./src/components/UpdateForm/UpdateForm";
 import { Details } from "./src/Pages/Details/Details";
+import { useContext } from "react";
+import { DarkModeContext } from "./DarkMode/DarkMode";
 
 export const router = createBrowserRouter([
   {
@@ -85,8 +87,9 @@ export const router = createBrowserRouter([
 
 function NavLayout() {
   const { state } = useNavigation();
+  const { isDark } = useContext(DarkModeContext);
   return (
-    <>
+    <div className={isDark ? "dark" : ""}>
       <Navbar />
       {state === "loading" ? (
         "Loading"
@@ -95,6 +98,6 @@ function NavLayout() {
       )}
       <ToastContainer autoClose={1000} />
       <Footer />
-    </>
+    </div>
   );
 }

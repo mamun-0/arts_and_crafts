@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 import { Tooltip } from "react-tooltip";
 import { Typewriter } from "react-simple-typewriter";
+import { MdDarkMode } from "react-icons/md";
+import { DarkModeContext } from "../../../DarkMode/DarkMode";
 export function Navbar() {
   const { user, loading, logOut } = useContext(AuthContext);
-
+  const { toggleDark } = useContext(DarkModeContext);
   const userDisplayName = loading ? (
     <span className="loading loading-spinner loading-md"></span>
   ) : (
@@ -48,8 +50,11 @@ export function Navbar() {
       </li>
     </>
   );
+  function handleMode() {
+    toggleDark();
+  }
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 dark:bg-black dark:text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,7 +81,7 @@ export function Navbar() {
           </ul>
         </div>
         <a className="btn btn-ghost text-2xl font-bold">
-        Painting{" "}
+          Painting{" "}
           <span>
             <Typewriter
               words={["&", "Drawing"]}
@@ -95,6 +100,9 @@ export function Navbar() {
       </div>
       <div className="navbar-end space-x-2">
         <div className="flex justify-center items-center gap-2">
+          <p className="text-2xl cursor-pointer" onClick={handleMode}>
+            <MdDarkMode />
+          </p>
           <ul>
             {loading ? (
               <span className="loading loading-spinner loading-md"></span>
@@ -116,7 +124,10 @@ export function Navbar() {
                     Logout
                   </button>
                 ) : (
-                  <Link to="/login" className="btn btn-sm btn-outline">
+                  <Link
+                    to="/login"
+                    className="btn btn-sm btn-outline dark:text-white"
+                  >
                     Login
                   </Link>
                 )}

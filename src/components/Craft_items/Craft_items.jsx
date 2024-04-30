@@ -9,7 +9,7 @@ export function Craft_items({ data }) {
         {data.map((item, idx) => {
           return (
             <div key={idx}>
-              <div className="border bg-white border-gray-200 rounded-lg p-2 shadow-xl hover:scale-[1.01] transition-transform duration-600">
+              <div className="dark:bg-black border bg-white border-gray-200 rounded-lg p-2 shadow-xl hover:scale-[1.01] transition-transform duration-600">
                 <img
                   className="h-52 w-full object-cover rounded-lg"
                   src={item.image}
@@ -30,7 +30,7 @@ export function Craft_items({ data }) {
                 </ul>
                 <div className="text-right">
                   <Link
-                    className="btn btn-info btn-sm"
+                    className="btn btn-info btn-sm dark:text-white"
                     to={`/all-art-craft/${item._id}`}
                   >
                     View Details

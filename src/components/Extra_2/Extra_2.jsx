@@ -3,7 +3,7 @@ import { SectionTitle } from "../SectionTitle/SectionTitle";
 
 export function Extra_2() {
   return (
-    <div className="flex justify-center items-center flex-col bg-slate-50">
+    <div className="flex justify-center items-center flex-col bg-slate-50 dark:bg-slate-700">
       <SectionTitle title="Inspiration" />
       <p className="w-1/2 text-center animate__animated animate__pulse">
         Find inspiration at every turn with our curated collection of articles,
@@ -12,7 +12,7 @@ export function Extra_2() {
       </p>
       <div className="flex md:flex-row flex-col p-3">
         <div className="bg-white h-full shadow-2xl flex justify-center items-center text-center md:relative md:left-20 md:z-10">
-          <p className="md:text-3xl text-3xl p-3 animate__animated animate__fadeInUp">
+          <p className="md:text-3xl text-3xl p-3 animate__animated animate__fadeInUp dark:bg-slate-300 dark:text-black">
             Dive into immersive experiences where you'll learn through doing.
             Our workshops are designed to engage your senses
             <span className="text-orange-600"> and foster creativity</span>{" "}

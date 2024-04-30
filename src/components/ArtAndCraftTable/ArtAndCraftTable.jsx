@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 export function ArtAndCraftTable(props) {
   const allArtsAndCrafts = props?.data;
   return (
-    <div>
+    <div className="dark:bg-black dark:text-white">
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
+            <tr className="dark:text-white">
               <th></th>
               <th>Item</th>
               <th>Subcategory</th>

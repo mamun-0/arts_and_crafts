@@ -87,7 +87,7 @@ export function MyArtAndCraft() {
           Empty List
         </h2>
       ) : (
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 my-5 mx-2">
+        <div className="dark:bg-black grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 my-5 mx-2 dark:mx-0 dark:my-0">
           <MyArtAndCraftCard myArtsAndCarts={myArts} setToggle={setToggle} />
         </div>
       )}
